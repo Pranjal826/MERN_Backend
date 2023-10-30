@@ -1,0 +1,73 @@
+<%-include('./partials/header')%>
+<link rel="stylesheet" href="./stylesheets/home.css">
+
+    <div class="container">
+
+        <div class="user-box">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search..." required />
+            </div>
+            
+            <div class="users">
+                <!-- User list on the left side -->
+                <% users.forEach(user=> { %>
+                    <div class="user-card">
+                        <img src="<%= user.profilepic %>" alt="Profile Picture">
+                        <div class="user-info">
+                            <strong>
+                                <%= user.name %>
+                            </strong>
+                            <p>
+                                <%= user.gender %>
+                            </p>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                
+            </div>
+            <div class="chat-messages">
+                <div class="input-message">
+                    <form>
+                        <ul id="messages"></ul>
+                        <textarea name="message" id="message" ></textarea>
+                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../javascripts/client.js"></script>
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', function () {
+    
+                const searchInput = document.getElementById('searchInput');
+                const userCards = document.querySelectorAll('.user-card');
+                const messageForm = document.getElementById('messageForm');
+
+
+        searchInput.addEventListener('input', function () {
+                    const query = searchInput.value.toLowerCase();
+        
+                    userCards.forEach(userCard => {
+                        const userName = userCard.querySelector('strong').textContent.toLowerCase();
+                        const userGender = userCard.querySelector('p').textContent.toLowerCase();
+                        const isMatch = userName.includes(query) || userGender.includes(query);
+        
+                        if (isMatch) {
+                            userCard.style.display = 'flex';
+                        } else {
+                            userCard.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+        
+        <%-include('./partials/footer')%>

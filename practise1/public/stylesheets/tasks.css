@@ -1,0 +1,53 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Task card styles */
+.task-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task title styles */
+.task-card h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Task description styles */
+.task-card p {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Task action buttons styles */
+.task-buttons {
+    margin-top: 20px;
+}
+
+.task-buttons a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.task-buttons button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-buttons button:hover {
+    background-color: #555;
+}

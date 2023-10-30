@@ -1,0 +1,15 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+<form action="/signup" method="post">
+    <div class="container" align="center">
+        <h1>Sign Up</h1><br/>
+        <input type="text" placeholder="Username" name="username">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="Password" name="password">
+
+    </div>
+        <button type="submit">Signup</button>
+        <p>Already have and account? <a href="/signin">Signin</a>
+        </p>
+
+</form>

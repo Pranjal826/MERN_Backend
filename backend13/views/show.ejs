@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs')%>
+<%- include('partials/nav.ejs')%>
+<div class="show-container">
+    <h1>Registered Books</h1>
+<div class="show-books">
+    <% books.forEach(function(book,idx){%>
+        <div class="book-card">
+            <img src="<%= book.imagelink%>" alt="">
+            <h3>
+                <%=book.title%>
+            </h3>
+            <div class="btn">
+                <a href="/delete/<%=idx%>">
+                    <button>Delete</button>
+                    </a>
+                    <a href="/update/<%=idx%>">
+                    <button>Update</button>
+        
+                    </a>
+            </div>
+            
+        </div>
+    
+        <%})%>
+</div>
+  
+</div>
+
+<%- include('./partials/footer.ejs')%>

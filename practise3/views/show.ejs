@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<%- include('./partials/nav') %>
+<div class="container">
+   <% read.forEach((e,ind) => { %>
+        <h3><%= e.username %></h3>
+        <h3><%= e.title %></h3>
+        <h3><%= e.email %></h3>
+        <h3><%= e.date %></h3>
+       <a href="/update/<%=ind%>">
+        <button>Update</button>
+       </a>
+       <a href="/delete/<%=ind%>">
+        <button>Delete</button>
+       </a>
+   <% }); %>
+</div>

@@ -1,0 +1,20 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+
+    <h1>Items</h1>
+    <!-- Search -->
+    <form action="/search" method="POST">
+        <input type="text" name="search" placeholder="Search for an item">
+        <button type="submit">Search</button>
+    <ul>
+        <% items.forEach((item) => { %>
+            <li>
+                <h2><%= item.name %></h2>
+                <p><%= item.description %></p>
+                <a href="/update/<%= item._id %>">Edit</a>
+              <a href="/delete/<%=item.id%>">Delete</a>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/create">Create New Item</a>
+<%-include('./partials/footer')%>

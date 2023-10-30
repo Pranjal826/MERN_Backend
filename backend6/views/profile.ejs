@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partial/nav')%>
+    <ul>
+        <% profile.forEach(function(p,i){ %>
+        <li>
+            <h2><%= p.skill%></h2>
+            <h3><%= p.institute%></h3>
+         
+        </li>
+        <a href="/profile/<%= i%>">Explore</a>
+        <% }) %>
+    </ul>
+</body>
+</html>

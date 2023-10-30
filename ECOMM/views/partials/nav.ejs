@@ -1,0 +1,114 @@
+
+<nav>
+    <div class="div1 ">
+        <img class="logo" src="a710a3153853f9b733f7684b99dff624-removebg-preview.png" alt="">
+        <h4 class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            Deliver to
+            <br> <span style="font-weight: 900;">India</span>
+        </h4>
+
+        <div class="search-bar">
+            <select name="select" id="">
+                <% options.forEach((option) => { %>
+                    <option value=`<%= option %>`><%= option %></option>
+                  <% }); %>
+            </select>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search by title...">
+                <button type="submit" id="searchButton">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+        </div>
+        <div class="sign-in">
+            <h4>Hello, Sign in</h4>
+            <h5>Account and Lists</h5>
+        </div>
+        <div class="return-order">
+            <h4>Returns</h4>
+            <h5>and Orders</h5>
+        </div>
+        <div class="cart">
+            <i class="fa-solid fa-shopping-cart"></i>
+            <h5>Cart</h5>
+        </div>
+    </div>
+
+    <div class=" top-nav">
+        <div class="all">
+            <i class="fa-solid fa-bars open"></i>
+            <a href="#">
+                <h4>All</h4
+            </a>
+        </div>
+        <a href="#">
+            <h4>Today's deal</h4>
+        </a>
+        <a href="#">
+            <h4>Customer Service</h4>
+        </a>
+        <a href="#">
+            <h4>Gift Cards</h4>
+        </a>
+        <a href="#">
+            <h4>Registry</h4>
+        </a>
+        <a href="#">
+            <h4>Sell</h4>
+        </a>
+    </div>
+    <div class="sidebar">
+        <div class="sign">
+            <i class="fa-regular fa-user"></i>
+            <h4>Hello, Sign in</h4>
+
+            <i class="fa-solid fa-xmark" id="close"></i>
+
+        </div>
+        <div class="h1">
+            <% sections.forEach(section => { %>
+              <h3><%= section.title %></h3>
+              <% section.items.forEach(item => { %>
+                <div class="inner">
+                  <a href="#">
+                    <h4><%= item %></h4>
+                  </a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              <% }); %>
+              <% }) %>
+              <div class="inner1">
+                <a href="#">
+                  <h4 id="seeall"><%= sections[2].seeall %></h4>
+                </a>
+                <h4 class="right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </h4>
+              </div>
+              <div class="links">
+                <% sections[2].dynamicLinks.forEach(link => {%>
+                  <div class="dynamic-link">
+                    <a href="/dynamic-route/<%= link %>">
+                      <h4><%= link %></h4>
+                    </a>
+                  </div>
+                <% }) %>
+              </div>
+        <hr>
+        <div class="h1">
+            <h3>Help and Settings</h3>
+            <div class="inner">
+                <a href="#">
+                    <h4>Your Account</h4>
+                </a>
+            </div>
+            <div class="inner">
+                <a href="#">
+                    <h4>Customer Service</h4>
+                </a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</nav>

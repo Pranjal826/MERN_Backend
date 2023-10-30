@@ -1,0 +1,224 @@
+<%- include("./partials/head.ejs")%>
+  <%- include("./partials/nav.ejs") %>
+    <div class="container">
+      <div class="slider">
+        <h4 class="icon-left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </h4>
+        <div class="slides">
+          <% midimages.forEach((image, index)=> { %>
+            <img class="mid-image" src="<%= image.image %>" alt="Image">
+            <% }); %>
+        </div>
+
+        <h4 class="icon-right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </h4>
+      </div>
+      <div class="boxes">
+        <div class="inner-box">
+          <% productdetails.forEach(product=> { %>
+            <div class="box pro-box" data-title="<%= product.title %>">
+              <h3>
+                <%= product.title %>
+              </h3>
+              <div class="inner-img">
+                <img src="<%= product.imageurl %>" alt="<%= product.title %>" class="pro-img">
+
+              </div>
+
+              <a href="/products/<%= product.title %>">
+                <%= product.more %>
+              </a>
+            </div>
+            <% }); %>
+        </div>
+        <div class="inner-box">
+          <% for (var i=0; i < 4; i++) { %>
+            <% var product=item[i]; %>
+              <div class="box pro-box" data-title="<%= product.title %>">
+                <h3>
+                  <%= product.title %>
+                </h3>
+                <div class="inner-img">
+                  <img src="<%= product.image %>" alt="<%= product.title %>" class="pro-img">
+                </div>
+
+                <p>Price: $<%= product.price %>
+                </p>
+                <a href="/products/<%= product.title %>">See More</a>
+              </div>
+              <% } %>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[0]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=4; i < 17; i++) { %>
+                <% var product=item[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.image %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <a href="/products/<%= product.title %>">See More</a>
+
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[1]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=16; i <20 ; i++) { %>
+                <% var product=item[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.image %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <a href="/products/<%= product.title %>">See More</a>
+
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[2]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=0; i < 10; i++) { %>
+                <% var product=item1[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.images[0] %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <h3>
+                      <%= product.title %>
+                    </h3>
+                    <a href="/products/<%= product.title %>">See More</a>
+
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[3]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=10; i < 15; i++) { %>
+                <% var product=item1[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.images[0] %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+
+
+                    <h3>
+                      <%= product.title %>
+                    </h3>
+                    <a href="/products/<%= product.title %>">See More</a>
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[4]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=17; i < 20; i++) { %>
+                <% var product=item1[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.images[0] %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <h3>
+                      <%= product.title %>
+                    </h3>
+                    <a href="/products/<%= product.title %>">See More</a>
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[5]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=21; i < 25; i++) { %>
+                <% var product=item1[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.images[0] %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <h3>
+                      <%= product.title %>
+                    </h3>
+                    <a href="/products/<%= product.title %>">See More</a>
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+        <div class="div2">
+          <div class="freq-product">
+            <h2>
+              <%=headings[6]%>
+            </h2>
+            <div class="freq-inner">
+              <% for (var i=25; i < 30; i++) { %>
+                <% var product=item1[i]; %>
+                  <div class="box1 pro-box" data-title="<%= product.title %>">
+                    <div class="img-box">
+                      <img src="<%= product.images[0] %>" alt="<%= product.title %>" class="freq-img">
+                    </div>
+                    <p>Price: $<%= product.price %>
+                    </p>
+                    <h3>
+                      <%= product.title %>
+                    </h3>
+                    <a href="/products/<%= product.title %>">See More</a>
+
+                  </div>
+                  <% } %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <%-include("./partials/footer.ejs")%>

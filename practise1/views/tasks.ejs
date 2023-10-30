@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+<%- include('./partials/nav') %>
+<link rel="stylesheet" href="./stylesheets/tasks.css">
+<div class="container">
+    <h1>Pending Tasks</h1>
+    <% if (tasks.length > 0) { %>
+        <% tasks.forEach(function(task, index) { %>
+            <div class="task-card">
+                <h2>Title: <%= task.title %></h2>
+                <h2>Name: <%= task.name %></h2>
+                <h2>Id: <%= task.id %></h2>
+    
+                <p><strong>Description:</strong> <%= task.desc %></p>
+                <p><strong>Date:</strong> <%= task.date %></p>
+                <div class="task-buttons">
+                    <a href="/update/<%= index %>"><button>Update</button></a>
+                    <a href="/delete/<%= index %>"><button>Delete</button></a>
+                </div>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No tasks found.</p>
+    <% } %>
+    
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,21 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+
+<form action="/create-post" method="POST">
+    <label for="profileimage">Profile Image URL:</label>
+    <input type="text" name="profileimage" id="profileimage" required>
+    
+    <label for="postimage">Post Image URL:</label>
+    <input type="text" name="postimage" id="postimage" required>
+    
+    <label for="title">Name:</label>
+    <input type="text" name="nema" id="name" required>
+    
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+    
+    <label for="posttext">Post Text:</label>
+    <textarea name="posttext" id="posttext" rows="4" required></textarea>
+    
+    <button type="submit">Create Post</button>
+</form>

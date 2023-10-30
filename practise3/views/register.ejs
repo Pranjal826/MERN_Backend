@@ -1,0 +1,18 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+<div class="form">
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <label for="username"><b>Username:</b></label><br/>
+        <input type="text" placeholder="Enter Username" name="username" ><br/>
+        <label for="title"><b>Title:</b></label><br/>
+        <input type="text" placeholder="Enter Title" name="title" ><br/>
+        <label for="email"><b>Email:</b></label><br/>
+        <input type="email" placeholder="Enter Email" name="email" ><br/>
+        <label for="password"><b>Password:</b></label><br/>
+        <input type="password" placeholder="Enter Password" name="password" ><br/>
+        <label for="username"><b>Date:</b></label><br/>
+        <input type="date" placeholder="Enter Data" name="date" ><br/>
+        <button>Register</button>
+    </form>
+</div>

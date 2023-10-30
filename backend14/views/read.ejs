@@ -1,0 +1,31 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+
+    <% posts.forEach(function(post, index) { %>
+        <div class="post-card">
+           <div class="first">
+            <img src="<%= post.profileimage %>" alt="<%= post.name %>'s Profile Image">
+            
+            <h2><%= post.title %></h2>
+           </div>
+           <div class="second">
+            <p><%= post.posttext %></p>
+            <img src="<%= post.postimage %>" alt="<%= post.title %>'s Image">
+            <p>Posted on <%= post.date.toLocaleString() %></p>
+           </div>
+<div class="third">
+    <p>Likes: <%= post.like %></p>
+            
+    <form action="/delete-post/<%= index %>" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    
+    <a href="/update-post/<%= index %>">Update</a>
+    
+    <form action="/like-post/<%= index %>" method="POST">
+        <button type="submit">Like</button>
+    </form>
+</div>
+          
+        </div>
+    <% }); %>

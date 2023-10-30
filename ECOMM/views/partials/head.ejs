@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const openButton = document.querySelector(".open");
+            const closeButton = document.querySelector("#close"); // Correctly target the "close" button
+            const sidebar = document.querySelector(".sidebar");
+            const container = document.querySelector(".container");
+            const body=document.querySelector('body')
+            const navContainer = document.querySelector(".nav-container")
+            openButton.addEventListener("click", () => {
+                sidebar.style.transform = "translateX(0)"
+                container.classList.add("visible");
+                body.style.position="fixed"
+            });
+
+            closeButton.addEventListener("click", () => {
+                sidebar.style.transform = "translateX(-100%)";
+                container.classList.remove("visible");
+                body.style.position="initial"
+
+
+            });
+            const seeAllLinks = document.querySelectorAll(".inner1");
+            const links = document.querySelectorAll(".links");
+            const right = document.querySelector(".right")
+            // Initially hide the links using the 'hidden' class
+            links.forEach(link => {
+                link.classList.add("hidden");
+            });
+
+            seeAllLinks.forEach(seeAllLink => {
+                seeAllLink.addEventListener("click", () => {
+                    links.forEach(link => {
+                        if (link.classList.contains("hidden")) {
+                            link.classList.remove("hidden");
+                            link.classList.add("showlinks");
+                            right.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`
+
+                        } else {
+                            link.classList.remove("showlinks");
+                            link.classList.add("hidden");
+                            right.innerHTML = `<i class="fa-solid fa-chevron-right"></i>`
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>

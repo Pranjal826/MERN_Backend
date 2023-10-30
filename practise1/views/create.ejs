@@ -1,0 +1,25 @@
+<%-include('./partials/header')%>
+    <%-include('./partials/nav')%>
+        <div class="form">
+            <form action="/tasks" method="post">
+                <label for="id">Id</label>
+                <input type="number" name="id" placeholder="Enter Id....">
+                <br />
+                <label for="">Name</label>
+                <input type="text" name='name' placeholder="Enter title here..." />
+                <br />
+                <label for="">Title</label>
+                <input type="text" name='title' placeholder="Enter title here..." />
+                <br />
+                <label for="">Content</label>
+                <textarea name="desc" id="">
+
+                </textarea>
+                <br />
+                <label for="date"></label>
+                <input type="date" name="date"/>
+                <button type="submit">
+                    Submit 
+                </button>
+            </form>
+        </div>

@@ -1,0 +1,98 @@
+/* styles.css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+/* styles.css */
+
+/* Style the navigation bar */
+nav {
+  background-color: #333; /* Background color */
+  padding: 10px; /* Add some spacing around the links */
+  text-align: center; /* Center-align the links horizontally */
+}
+
+/* Style the navigation links */
+nav a {
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underlines from links */
+  padding: 10px 20px; /* Add padding to the links */
+  margin: 0 10px; /* Add margin to separate links */
+}
+
+/* Change link color on hover */
+nav a:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn{
+  display: flex;
+  gap: 20px;
+}
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+/* styles.css */
+
+/* Style the card container */
+.card {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the heading elements inside the card */
+.card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}

@@ -1,0 +1,78 @@
+<%- include('partials/header.ejs')%>
+<%- include('partials/nav.ejs')%>
+
+<div class="register-container">
+    <h2>Update Your Books</h2>
+    <form action="/update/<%= index%>" method="POST">
+        <input
+            value="<%= book.author %>"
+            type="text"
+            placeholder="Author"
+            name="author"
+        />
+        <br /><br />
+        <select name="country">
+            <option value="">Select Country</option>
+            <% countryNames.forEach(function(c){%>
+
+            <option 
+            <%= book.country === c ? "selected" : ""%>
+            
+            value="<%= c%>" > <%= c%>
+            </option>
+
+            <%})%>
+        </select>
+        <br /><br />
+        <input
+            value="<%= book.imagelink%>"
+            type="text"
+            placeholder="Image Link"
+            name="imagelink"
+        />
+        <br /><br />
+        <select name="language">
+            <option value="">Select Language</option>
+            <% languageNames.forEach(function(l){ %>
+
+            <option 
+            <%= book.language === l.name ? "selected" : ""%>
+            
+            value="<%= l.name%>"><%= l.name%></option>
+
+            <% }) %>
+        </select>
+        <br /><br />
+        <input
+            value="<%= book.link%>"
+            type="text"
+            placeholder="Link"
+            name="link"
+        />
+        <br /><br />
+        <input
+            value="<%= book.pages%>"
+            type="number"
+            placeholder="Pages"
+            name="pages"
+        />
+        <br /><br />
+        <input
+            value="<%= book.title%>"
+            type="text"
+            placeholder="Title"
+            name="title"
+        />
+        <br /><br />
+        <input
+            value="<%= book.publication%>"
+            type="text"
+            placeholder="Year Of Publication"
+            name="publication"
+        />
+        <br /><br />
+        <button>Update Book</button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs')%>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <%- include("partials/nav")%>
+    <%=myname%>
+
+
+        <ol>
+            <% subjects.forEach(function(sub){ %>
+            <li><%= sub%></li>
+            <% }) %>
+        </ol>
+        <hr />
+
+        <ol>
+            <% users.forEach(function(user){ %>
+            <li><%= user.name%> - <%= user.skill%></li>
+            <% }) %>
+        </ol>
+        <hr />
+        <h1><%= profile.name%> - <%=profile.age%> - <%= profile.skill%></h1>
+
+   <h1>This is home page</h1>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<%-include('./partials/header')%>
+<style>
+.user-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 16px;
+  width: 300px;
+}
+
+.user-dp {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover; /* Ensure the image is fully visible within the circle */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-top {
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.user-email {
+  color: #666;
+}
+
+.user-post {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.user-date {
+  margin: 12px 0;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.user-card a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.user-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+.user-card button:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+<div class="container">
+    <h1>User Data</h1>
+    <!-- search -->
+    <form action="/search" >
+        <input type="text" id="searchInput" name="name" placeholder="Search"> <!-- Use id for JavaScript -->
+    </form>
+    
+    <div class="user-cards">
+        <% users.forEach(function(user,idx) { %>
+          <div class="user-card">
+            <div class="user-info">
+              <div class="user-info-top">
+                <img class="user-dp" src="<%= user.dp %>" alt="User DP">
+                <div class="user-details">
+                  <p class="user-name"><strong><%= user.name %></strong></p>
+                  <p class="user-email"><%= user.email %></p>
+                </div>
+              </div>
+             
+            </div>
+            <img class="user-post" src="<%= user.post %>" alt="User Post">
+            <p class="user-date"><%= user.date %></p>
+            <a href="/update/<%=user._id%>">
+                <button>Update</button>
+            </a>
+            <a href="/delete/<%=user._id%>">
+                <button>Delete</button>
+          </div>
+        <% }); %>
+      </div>
+      
+    
+</div>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', (e) => {
+    const searchValue = e.target.form.action('/create');
+    const userCards = document.querySelectorAll('.user-card');
+    userCards.forEach(card => {
+      const userName = card.querySelector('.user-name').innerText.toLowerCase();
+      const userEmail = card.querySelector('.user-email').innerText.toLowerCase();
+      if (userName.includes(searchValue) || userEmail.includes(searchValue)) {
+        card.style.display = 'block';
+    console.log(e)
+
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+<%-include('./partials/footer') %> 

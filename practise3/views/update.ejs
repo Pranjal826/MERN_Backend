@@ -1,0 +1,24 @@
+<%-include('./partials/header')%>
+<%-include('./partials/nav')%>
+<div class="form">
+    <h1>Update Profile</h1>
+    <form action="/update/<%=idx%>" method="post">
+        <label for="username"><b>Username:</b></label><br/>
+        <input type="text" placeholder="Enter Username" name="username" value="<%=data.username%>"><br/>
+        
+        <label for="title"><b>Title:</b></label><br/>
+        <input type="text" placeholder="Enter Title" name="title" value="<%=data.title%>"><br/>
+        
+        <label for="email"><b>Email:</b></label><br/>
+        <input type="email" placeholder="Enter Email" name="email" value="<%=data.email%>" ><br/>
+        
+        <label for="password"><b>Password:</b></label><br/>
+        <input type="password" placeholder="Enter Password" name="password" value="<%=data.password%>"><br/>
+        
+        <label for="date"><b>Date:</b></label><br/>
+        <input type="date" placeholder="Enter Date" name="date" value="<%=data.date%>"><br/>
+        
+        <button>Update</button>
+    </form>
+</div>
+<%-include('./partials/footer')%>
